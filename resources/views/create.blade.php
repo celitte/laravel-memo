@@ -7,11 +7,13 @@
             @csrf
             <h5 class="card-title"></h5>
             <p class="card-text">
+            <label for="exampleFormControlTextarea1">材料:</label>
+                <textarea class="form-control" name="content" rows="8" placeholder="材料を書きましょう"></textarea>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">新規作成</label>
+
 
                 <div class="form-group">
-  <label for="time-input">時間を入力してください:</label>
+  <label for="time-input">調理時間:</label>
   <select class="form-control" id="time-input" name="time" required>
     <option value="">--選択してください--</option>
     <option value="5">5分</option>  
