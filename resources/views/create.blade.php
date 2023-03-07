@@ -9,22 +9,25 @@
             <p class="card-text">
             <div class="form-group">
             <form method="POST" action="/path/to/store/rating">
-    @csrf
 
-    <label for="rating">Rating:</label>
+ <label for="name">料理名:</label>
+        <input type="text" name="name" id="name"><br><br>
+
+    <label for="rating">総合満足度:</label>
     <select name="rating" id="rating">
         <option value="1">1</option>
+        <option value="1.5">1.5</option>
         <option value="2">2</option>
+        <option value="2.5">2.5</option>
         <option value="3">3</option>
+        <option value="3.5">3.5</option>
         <option value="4">4</option>
+        <option value="4.5">4.5</option>
         <option value="5">5</option>
     </select>
+<br>
 
-    <button type="submit">Submit</button>
-</form>
-
-
-                <label for="exampleFormControlTextarea1">材料</label>
+                <label for="exampleFormControlTextarea1" style="margin-: 1em;">材料</label>
                 <textarea class="form-control" name="content" rows="8" placeholder="材料を書きましょう"></textarea>
                 <div class="form-group">
                     <label for="time-input">調理時間</label>
