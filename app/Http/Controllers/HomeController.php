@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ModelName;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,4 +26,16 @@ class HomeController extends Controller
     {
         return view('create');
     }
+
+    public function store(Request $request)
+    {
+        $posts = $request->all();
+        
+        dd($posts);
+        return view('create');
+    }
+
+
+
+    
 }
