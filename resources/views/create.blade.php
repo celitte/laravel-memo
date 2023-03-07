@@ -8,7 +8,7 @@
             <h5 class="card-title"></h5>
             <p class="card-text">
             <div class="form-group">
-            <form method="POST" action="/path/to/store/rating">
+
 
  <label for="name">料理名:</label>
         <input type="text" name="name" id="name"><br><br>
