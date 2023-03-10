@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ModelName;
+// use App\Models\ModelName;
 use Illuminate\Http\Request;
+use App\Models\Memo;
 
 class HomeController extends Controller
 {
@@ -30,12 +31,15 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $posts = $request->all();
-        
-        dd($posts);
-        return view('create');
+
+        Memo::insert(['name' => $posts['name'],
+                    'rating' => $posts['rating'],
+                    'content' => $posts['content'],
+                    'time' => $posts['time'],
+                    'memo' => $posts['memo'],
+                    'user_id' => \Auth::id()]);
+
+                    return redirect ( route('home'));
     }
-
-
-
     
 }
