@@ -77,12 +77,12 @@
                 <div class="col-md-4">
                     
                     <div class="card w-100">
-                    <div class="card-header">左からむ</div>
+                    <div class="card-header">レシピ一覧</div>
                         <div class="card-body">
-                            
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            
+                        
+                            @foreach($memos as $memo)
+                            <a class="card-text d-block">{{ $memo['name'] }}</a>
+                            @endforeach
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@
                 </div>
                     <div class="col-md-2">
                         <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">中央カラム</div>
+                            <div class="card-header">レシピ詳細</div>
                                 <div class="card-body" style="padding-bottom: 20px;">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">中央カラム</div>
+                            <div class="card-header">レシピ詳細</div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -109,7 +109,7 @@
                         </div>
 
                             <div class="card w-100" style="margin-bottom: 10px;">
-                                <div class="card-header">中央カラム</div>
+                                <div class="card-header">レシピ詳細</div>
                                 <div class="card-body">
 
                                     <h5 class="card-title">Card title</h5>
@@ -120,7 +120,7 @@
 
                             <div class="card w-100" style="margin-bottom: 10px;">
 
-                            <div class="card-header">中央カラム</div>
+                            <div class="card-header">レシピ詳細</div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -133,7 +133,7 @@
 
                     <div class="col-md-2">
                         <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">中央カラム</div>
+                            <div class="card-header">レシピ詳細</div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -143,7 +143,7 @@
                         </div>
 
                         <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">中央カラム</div>
+                            <div class="card-header">レシピ詳細</div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -153,7 +153,7 @@
                         </div>
 
                         <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">中央カラム</div>
+                            <div class="card-header">レシピ詳細</div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -163,7 +163,7 @@
                         </div>
 
                         <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">中央カラム</div>
+                            <div class="card-header">レシピ詳細</div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>

@@ -31,10 +31,10 @@ class HomeController extends Controller
         ->whereNull('deleted_at')
         ->orderBy('updated_at','desc')
         ->get();
-        dd($memos);
+    
 
 
-        return view('create');
+        return view('create',compact('memos'));
     }
 
     public function store(Request $request)
