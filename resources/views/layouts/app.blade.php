@@ -13,6 +13,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link href="{{asset('css/style.css')}}" rel="stylesheet"> -->
+
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -74,21 +78,21 @@
 
         <main class="py-4">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 offset-md-2">
                     
                     <div class="card w-100">
                     <div class="card-header">レシピ一覧</div>
                         <div class="card-body">
                         
                             @foreach($memos as $memo)
-                            <a class="card-text d-block">{{ $memo['name'] }}</a>
+                            <a href="/detail/{{ $memo['id']}}" class="card-text d-block">{{ $memo['name'] }}</a>
                             @endforeach
                         </div>
                     </div>
 
                     
                 </div>
-                    <div class="col-md-2">
+                    <!-- <div class="col-md-2">
                         <div class="card w-100" style="margin-bottom: 10px;">
                             <div class="card-header">レシピ詳細</div>
                                 <div class="card-body" style="padding-bottom: 20px;">
@@ -174,7 +178,7 @@
 
 
 
-                    </div>
+                    </div> -->
 
                         <div class="col-md-4">
                             @yield('content')

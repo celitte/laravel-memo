@@ -50,5 +50,20 @@ class HomeController extends Controller
 
                     return redirect ( route('home'));
     }
+
+
+    public function detail()
+    {
+
+        $memos = Memo::select('memos.*')
+        ->where('user_id', '=', \Auth::id())
+        ->whereNull('deleted_at')
+        ->orderBy('updated_at','desc')
+        ->get();
+    
+        $detail_memo = Memo::find($id);
+
+        return view('detail',compact('memos', 'detail_memo'));
+    }
     
 }
