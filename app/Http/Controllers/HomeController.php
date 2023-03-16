@@ -52,7 +52,7 @@ class HomeController extends Controller
     }
 
 
-    public function detail()
+    public function detail($id)
     {
 
         $memos = Memo::select('memos.*')

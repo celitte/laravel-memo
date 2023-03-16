@@ -76,12 +76,12 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <!-- <main class="py-4">
             <div class="row">
                 <div class="col-md-4 offset-md-2">
                     
                     <div class="card w-100">
-                    <div class="card-header">レシピ一覧</div>
+                    <div class="card-header">レシピ詳細</div>
                         <div class="card-body">
                         
                             @foreach($memos as $memo)
@@ -91,7 +91,7 @@
                     </div>
 
                     
-                </div>
+                </div> -->
                     <!-- <div class="col-md-2">
                         <div class="card w-100" style="margin-bottom: 10px;">
                             <div class="card-header">レシピ詳細</div>
