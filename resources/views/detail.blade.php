@@ -13,19 +13,29 @@
  <!-- <label for="name">料理名:</label>
         <!-- <input type="text" name="name" id="name"> -->
         <!-- {{$detail_memo['name'] }}<br><br> --> 
-        <div class="container">
-  <div class="row">
-    <div class="col-md-20">
-      <h2>料理名：{{$detail_memo['name']}}</h2>
-      <p>{{$detail_memo['description']}}</p>
-    </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-20">
+                        <h2>料理名：{{$detail_memo['name']}}</h2>
+                        <p>{{$detail_memo['description']}}</p>
+                    </div>
+                </div>
 
               <label for="rating">自己満足度:</label>
-              <select name="rating" id="rating">
+              <select name="rating" id="rating"></select>
+                        <br>
                         <br>
 
-                <label for="exampleFormControlTextarea1" style="margin-: 1em;">材料</label>
-                <textarea class="form-control" name="content" rows="8" placeholder="材料を書きましょう" class="target1"></textarea>
+                <!-- <label for="exampleFormControlTextarea1" style="margin-: 1em;">材料</label>
+                <textarea class="form-control" name="content" rows="8" placeholder="材料を書きましょう" class="target1"></textarea> -->
+
+                <div class="form-group">
+                   <label class="col-md-5" for="title">食材</label>
+                        <div class="card-body" style="padding: 0.5em;">
+                             <textarea class="form-control" name="content" rows="7">{{$detail_memo['content']}}</textarea>
+                        </div>
+
+                    <!-- </div> -->
                 <div class="form-group">
                     <label for="time-input">調理時間</label>
                     <select class="form-control" id="time-input" name="time" required  style="margin-bottom: 10px;">
@@ -36,7 +46,7 @@
                         <option value="30">30分</option>
                         <option value="45">45分</option>    
                         <option value="60">1時間</option>
-                    </select
+                    </select>
                         <div class="invalid-feedback">
                             有効な時間単位を選択してください。
                         </div>
@@ -44,7 +54,13 @@
 
 
 
-                <textarea class="form-control" name="memo" rows="8" placeholder="メモを残しましょう"></textarea>
+                        <div class="form-group">
+    <label class="col-md-5" for="title">memo</label>
+    <div class="card-body" style="padding: 0.5em;">
+        <textarea class="form-control" name="content" rows="5" style="width: 100%">{{$detail_memo['memo']}}</textarea>
+    </div>
+</div>
+
             </div>
             <button type="submit" class="btn btn-primary">登録</button>
             <a class="btn btn-primary" href="/home">戻る</a>
