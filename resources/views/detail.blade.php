@@ -1,19 +1,26 @@
 @extends('layouts.appdetail')
 
 @section('content')
-    <div class="card-1 w-100">
+    <div class="card w-100">
         <div class="card-header">マイレシピ詳細</div>
-        <form class="card-body" action="{{ route ('store') }}" method="POST">
+        <form class="card-body"  action="{{ route ('store') }}" method="POST">
             @csrf
             <h5 class="card-title"></h5>
             <p class="card-text">
             <div class="form-group">
 
 
- <label for="name">料理名:</label>
-        <input type="text" name="name" id="name"><br><br>
+ <!-- <label for="name">料理名:</label>
+        <!-- <input type="text" name="name" id="name"> -->
+        <!-- {{$detail_memo['name'] }}<br><br> --> 
+        <div class="container">
+  <div class="row">
+    <div class="col-md-20">
+      <h2>料理名：{{$detail_memo['name']}}</h2>
+      <p>{{$detail_memo['description']}}</p>
+    </div>
 
-              <label for="rating">総合満足度:</label>
+              <label for="rating">自己満足度:</label>
               <select name="rating" id="rating">
                         <br>
 
@@ -29,7 +36,7 @@
                         <option value="30">30分</option>
                         <option value="45">45分</option>    
                         <option value="60">1時間</option>
-                    </select>
+                    </select
                         <div class="invalid-feedback">
                             有効な時間単位を選択してください。
                         </div>
@@ -39,7 +46,8 @@
 
                 <textarea class="form-control" name="memo" rows="8" placeholder="メモを残しましょう"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">削除</button>
+            <button type="submit" class="btn btn-primary">登録</button>
+            <a class="btn btn-primary" href="/home">戻る</a>
             </p>
                             
         </form>

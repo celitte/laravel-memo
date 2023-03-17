@@ -13,7 +13,7 @@
  <label for="name">料理名:</label>
         <input type="text" name="name" id="name"><br><br>
 
-              <label for="rating">総合満足度:</label>
+              <label for="rating">自己満足度:</label>
               <select name="rating" id="rating">
                   <option value="1">1</option>
                   <option value="1.5">1.5</option>

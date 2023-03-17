@@ -76,8 +76,8 @@
             </div>
         </nav>
 
-        <!-- <main class="py-4">
-            <div class="row">
+         <main class="py-4"> 
+            <!-- <div class="row">
                 <div class="col-md-4 offset-md-2">
                     
                     <div class="card w-100">
@@ -91,7 +91,7 @@
                     </div>
 
                     
-                </div> -->
+                </div>  -->
                     <!-- <div class="col-md-2">
                         <div class="card w-100" style="margin-bottom: 10px;">
                             <div class="card-header">レシピ詳細</div>
@@ -146,7 +146,7 @@
 
                     </div> -->
 
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             @yield('content')
                         </div>
             </div>
