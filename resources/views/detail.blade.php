@@ -10,20 +10,30 @@
             <div class="form-group">
 
 
- <!-- <label for="name">料理名:</label>
-        <!-- <input type="text" name="name" id="name"> -->
-        <!-- {{$detail_memo['name'] }}<br><br> --> 
-            <div class="container">
+ <label for="name">料理名:</label>
+ <input type="text" name="name" id="name"> 
+         
+         <textarea class="form-control" name="content" rows="2">{{$detail_memo['name'] }}</textarea>
+</input><br><br> 
+            <!-- <div class="container">
                 <div class="row">
-                    <div class="col-md-20">
-                        <h2>料理名：{{$detail_memo['name']}}</h2>
-                        <p>{{$detail_memo['description']}}</p>
+                    <div class="col-md-20  text-center">
+                        <h2>{{$detail_memo['name']}}</h2>
                     </div>
-                </div>
+                </div> -->
 
               <label for="rating">自己満足度:</label>
-              <select name="rating" id="rating"></select>
-                        <br>
+              <select name="rating" id="rating">
+                  <option value="1">1</option>
+                  <option value="1.5">1.5</option>
+                  <option value="2">2</option>
+                  <option value="2.5">2.5</option>
+                  <option value="3">3</option>
+                  <option value="3.5">3.5</option>
+                  <option value="4">4</option>
+                  <option value="4.5">4.5</option>
+                  <option value="5">5</option>
+              </select>
                         <br>
 
                 <!-- <label for="exampleFormControlTextarea1" style="margin-: 1em;">材料</label>
@@ -35,7 +45,7 @@
                              <textarea class="form-control" name="content" rows="7">{{$detail_memo['content']}}</textarea>
                         </div>
 
-                    <!-- </div> -->
+
                 <div class="form-group">
                     <label for="time-input">調理時間</label>
                     <select class="form-control" id="time-input" name="time" required  style="margin-bottom: 10px;">
@@ -55,14 +65,14 @@
 
 
                         <div class="form-group">
-    <label class="col-md-5" for="title">memo</label>
-    <div class="card-body" style="padding: 0.5em;">
-        <textarea class="form-control" name="content" rows="5" style="width: 100%">{{$detail_memo['memo']}}</textarea>
-    </div>
-</div>
+                            <label class="col-md-5" for="title">メモ</label>
+                            <div class="card-body" style="padding: 0.5em;">
+                                <textarea class="form-control" name="content" rows="5" style="width: 100%">{{$detail_memo['memo']}}</textarea>
+                            </div>
+                        </div>
 
             </div>
-            <button type="submit" class="btn btn-primary">登録</button>
+            <button type="submit" class="btn btn-primary">更新</button>
             <a class="btn btn-primary" href="/home">戻る</a>
             </p>
                             
