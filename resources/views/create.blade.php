@@ -13,16 +13,12 @@
  <label for="name">料理名:</label>
         <input type="text" name="name" id="name"><br><br>
 
-              <label for="rating">自己満足度:</label>
+              <label for="rating">難易度:</label>
               <select name="rating" id="rating">
                   <option value="1">1</option>
-                  <option value="1.5">1.5</option>
                   <option value="2">2</option>
-                  <option value="2.5">2.5</option>
                   <option value="3">3</option>
-                  <option value="3.5">3.5</option>
                   <option value="4">4</option>
-                  <option value="4.5">4.5</option>
                   <option value="5">5</option>
               </select>
                         <br>
