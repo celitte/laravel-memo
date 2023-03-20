@@ -25,4 +25,9 @@ Route::post('/home', [HomeController::class, 'store'])->name('store');
 
 Route::get('/detail/{id}',[HomeController::class, 'detail'])->name('detail');
 // 更新処理
-Route::post('/update/{id}', [HomeController::class, 'update'])->name('update');
+Route::post('/update', [HomeController::class, 'update'])->name('update');
+
+//削除処理
+Route::post('/destroy/{id}/', [HomeController::class, 'destroy'])->name('destory');
+
+

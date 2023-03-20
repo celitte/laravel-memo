@@ -3,8 +3,9 @@
 @section('content')
     <div class="card w-100">
         <div class="card-header">マイレシピ詳細</div>
-        <form class="card-body"  action="{{ route ('store') }}" method="POST">
+        <form class="card-body"  action="{{ route ('update') }}" method="POST">
             @csrf
+            <input type="hidden" name="memo_id" value="{{ $detail_memo['id'] }}" />
             <h5 class="card-title"></h5>
             <p class="card-text">
             <div class="form-group">
@@ -13,14 +14,9 @@
  <label for="name">料理名:</label>
  <input type="text" name="name" id="name"> 
          
-         <textarea class="form-control" name="content" rows="2">{{$detail_memo['name'] }}</textarea>
+         <textarea class="form-control" name="name" rows="2">{{$detail_memo['name'] }}</textarea>
 </input><br><br> 
-            <!-- <div class="container">
-                <div class="row">
-                    <div class="col-md-20  text-center">
-                        <h2>{{$detail_memo['name']}}</h2>
-                    </div>
-                </div> -->
+
 
               <label for="rating">自己満足度:</label>
               <select name="rating" id="rating">
@@ -36,8 +32,6 @@
               </select>
                         <br>
 
-                <!-- <label for="exampleFormControlTextarea1" style="margin-: 1em;">材料</label>
-                <textarea class="form-control" name="content" rows="8" placeholder="材料を書きましょう" class="target1"></textarea> -->
 
                 <div class="form-group">
                    <label class="col-md-5" for="title">食材</label>
@@ -67,13 +61,16 @@
                         <div class="form-group">
                             <label class="col-md-5" for="title">メモ</label>
                             <div class="card-body" style="padding: 0.5em;">
-                                <textarea class="form-control" name="content" rows="5" style="width: 100%">{{$detail_memo['memo']}}</textarea>
-                            </div>
+                                <!-- <textarea class="form-control" name="memo" rows="5" style="width: 100%">{{$detail_memo['memo']}}</textarea> -->
+                                <textarea class="form-control" name="memo" rows="8">{{$detail_memo['memo']}}</textarea>
+
                         </div>
 
             </div>
+            <input type="submit" class="btn btn-danger btn-dell" value="削除">
             <button type="submit" class="btn btn-primary">更新</button>
             <a class="btn btn-primary" href="/home">戻る</a>
+
             </p>
                             
         </form>

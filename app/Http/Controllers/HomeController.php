@@ -66,10 +66,32 @@ class HomeController extends Controller
         return view('detail',compact('memos', 'detail_memo'));
     }
     
-}
 
-    // public function update(Request $request, $id)
-    // {
-    //     $memos = Memo::find($id);
+
+    public function update(Request $request)
+    {
+        $posts = $request->all();
+
+
+        Memo::where('id', $posts['memo_id'])
+        ->update(['name' => $posts['name'],
+        'rating' => $posts['rating'],
+        'content' => $posts['content'],
+        'time' => $posts['time'],
+        'memo' => $posts['memo'],
+        'user_id' => \Auth::id()]);
+            
+
+        return redirect ( route('home'));
         
+    }
+
+
+    /**
+     * 削除
+     */
+    // public function delete($id)
+    // {
+    //     $memos = \App
     // }
+}
