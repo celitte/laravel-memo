@@ -12,22 +12,22 @@
 
 
  <label for="name">料理名:</label>
- <input type="text" name="name" id="name"> 
+ <!-- <input type="text" name="name" id="name">  -->
          
-         <textarea class="form-control" name="name" rows="2">{{$detail_memo['name'] }}</textarea>
+         <!-- <textarea class="form-control" name="name" rows="2">{{$detail_memo['name'] }}</textarea> -->
+         <h2 name="name">{{ $detail_memo['name'] }}</h2>
+
 </input><br><br> 
 
 
-              <label for="rating">自己満足度:</label>
+              <label for="rating">難易度:</label>
               <select name="rating" id="rating">
+              <option value="">{{ $detail_memo['rating'] }}</option>
+              
                   <option value="1">1</option>
-                  <option value="1.5">1.5</option>
                   <option value="2">2</option>
-                  <option value="2.5">2.5</option>
                   <option value="3">3</option>
-                  <option value="3.5">3.5</option>
                   <option value="4">4</option>
-                  <option value="4.5">4.5</option>
                   <option value="5">5</option>
               </select>
                         <br>
@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <label for="time-input">調理時間</label>
                     <select class="form-control" id="time-input" name="time" required  style="margin-bottom: 10px;">
-                        <option value="">--選択してください--</option>
+                        <option value="">{{ $detail_memo['time'] }}分</option>
                         <option value="5">5分</option>  
                         <option value="10">10分</option>
                         <option value="15">15分</option>

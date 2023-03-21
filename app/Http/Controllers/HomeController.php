@@ -74,7 +74,8 @@ class HomeController extends Controller
 
 
         Memo::where('id', $posts['memo_id'])
-        ->update(['name' => $posts['name'],
+        ->update([
+            // 'name' => $posts['name'],
         'rating' => $posts['rating'],
         'content' => $posts['content'],
         'time' => $posts['time'],
