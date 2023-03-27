@@ -15,7 +15,7 @@
  <!-- <input type="text" name="name" id="name">  -->
          
          <!-- <textarea class="form-control" name="name" rows="2">{{$detail_memo['name'] }}</textarea> -->
-         <h2 name="name">{{ $detail_memo['name'] }}</h2>
+         <h2 name="name" >{{ $detail_memo['name'] }}</h2>
 
 </input><br><br> 
 
@@ -32,15 +32,7 @@
               </select>
                         <br>
 
-
-                <div class="form-group">
-                   <label class="col-md-5" for="title">食材</label>
-                        <div class="card-body" style="padding: 0.5em;">
-                             <textarea class="form-control" name="content" rows="7">{{$detail_memo['content']}}</textarea>
-                        </div>
-
-
-                <div class="form-group">
+                        <div class="form-group">
                     <label for="time-input">調理時間</label>
                     <select class="form-control" id="time-input" name="time" required  style="margin-bottom: 10px;">
                         <option value="">{{ $detail_memo['time'] }}分</option>
@@ -55,6 +47,15 @@
                             有効な時間単位を選択してください。
                         </div>
                         </div>
+
+                <div class="form-group">
+                   <label class="col-md-5" for="title">食材</label>
+                        <div class="card-body" style="padding: 0.5em;">
+                             <textarea class="form-control" name="content" rows="7">{{$detail_memo['content']}}</textarea>
+                        </div>
+
+
+
 
 
 
