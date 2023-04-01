@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card w-100">
-        <div class="card-header">マイレシピ詳細</div>
+        <div class="card-header"><strong>マイレシピ詳細</strong></div>
         <form class="card-body"  action="{{ route ('update') }}" method="POST">
             @csrf
             <input type="hidden" name="memo_id" value="{{ $detail_memo['id'] }}" />
@@ -64,18 +64,25 @@
                         <div class="form-group">
                             <label class="col-md-5" for="title">メモ</label>
                             <div class="card-body" style="padding: 0.5em;">
-                                <!-- <textarea class="form-control" name="memo" rows="5" style="width: 100%">{{$detail_memo['memo']}}</textarea> -->
                                 <textarea class="form-control" name="memo" rows="8">{{$detail_memo['memo']}}</textarea>
 
+                            </div>
+
                         </div>
+            <div class ="detail-button">
+                <button type="submit" class="btn btn-primary">更新</button>
+                <a class="btn btn-primary" href="/home">戻る</a>
+</form>
+            <!-- 削除ボタンの処理 -->
+            <form action="{{ route('destroy') }}" method="POST">
+                @csrf
+                <input type="hidden" name="memo_id" value="{{ $detail_memo['id'] }}"/>
+          
 
+                <button type="submit" class="btn btn-danger  btn-delete">削除</button>
+            </form>
             </div>
-            <input type="submit" class="btn btn-danger btn-dell" value="削除">
-            <button type="submit" class="btn btn-primary">更新</button>
-            <a class="btn btn-primary" href="/home">戻る</a>
 
-            </p>
-                            
-        </form>
+
     </div>
     @endsection

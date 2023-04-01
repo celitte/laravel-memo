@@ -17,3 +17,14 @@ body {
 .dish-name {
     margin-bottom: 10px;
 }
+
+
+  .btn-delete {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: stretch;
+    margin-right: 30px;
+    margin-bottom: 100px;
+
+  }

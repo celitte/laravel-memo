@@ -22,12 +22,11 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/home', [HomeController::class, 'store'])->name('store');
-
+//編集画面に遷移させる
 Route::get('/detail/{id}',[HomeController::class, 'detail'])->name('detail');
 // 更新処理
 Route::post('/update', [HomeController::class, 'update'])->name('update');
-
 //削除処理
-Route::post('/destroy/{id}/', [HomeController::class, 'destroy'])->name('destory');
+Route::post('/destroy', [HomeController::class, 'destroy'])->name('destroy');
 
 

@@ -81,7 +81,7 @@
                 <div class="col-md-4 offset-md-2">
                     
                     <div class="card w-100">
-                    <div class="card-header">レシピ一覧</div>
+                    <div class="card-header"><strong>レシピ一覧</strong></div>
                         <div class="card-body">
                         
                             @foreach($memos as $memo)
@@ -92,59 +92,7 @@
 
                     
                 </div>
-                    <!-- <div class="col-md-2">
-                        <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">レシピ詳細</div>
-                                <div class="card-body" style="padding-bottom: 20px;">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            
-                                </div>
-                            
-                        </div>
 
-
-                            
-
-                    </div>
-
-
-                    <div class="col-md-2">
-                        <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">レシピ詳細</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            
-                                </div>
-                            
-                        </div>
-
-                        <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">レシピ詳細</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            
-                                </div>
-                            
-                        </div>
-
-                        <div class="card w-100" style="margin-bottom: 10px;">
-                            <div class="card-header">レシピ詳細</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            
-                                </div>
-                            
-                        </div>
-
-
-
-
-
-                    </div> -->
 
                         <div class="col-md-4">
                             @yield('content')

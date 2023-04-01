@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card w-100">
-        <div class="card-header">マイレシピ作成</div>
+        <div class="card-header"><strong>マイレシピ作成</strong></div>
             <form class="card-body" action="{{ route ('store') }}" method="POST">
             @csrf
             <h5 class="card-title"></h5>
@@ -42,7 +42,7 @@
                 <br>
                 <label for="exampleFormControlTextarea1" style="margin-: 1em;">材料</label>
                 <textarea class="form-control" name="content" rows="8" placeholder="材料を書きましょう" class="target1"></textarea>
-                <!-- <div class="form-group"> -->
+
                 <br>
 
                         </div>
