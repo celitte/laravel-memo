@@ -39,6 +39,12 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required',
+            'content' =>'required',
+            'time' =>'required',
+        ]);
+
         $posts = $request->all();
 
         Memo::insert(['name' => $posts['name'],

@@ -5,6 +5,17 @@
         <div class="card-header"><strong>マイレシピ作成</strong></div>
             <form class="card-body" action="{{ route ('store') }}" method="POST">
             @csrf
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
             <h5 class="card-title"></h5>
             <p class="card-text">
             <div class="form-group">
