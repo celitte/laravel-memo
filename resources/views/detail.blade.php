@@ -1,25 +1,19 @@
 @extends('layouts.appdetail')
 
 @section('content')
-    <div class="card w-100">
-        <div class="card-header"><strong>マイレシピ詳細</strong></div>
-        <form class="card-body"  action="{{ route ('update') }}" method="POST">
-            @csrf
-            <input type="hidden" name="memo_id" value="{{ $detail_memo['id'] }}" />
-            <h5 class="card-title"></h5>
-            <p class="card-text">
-            <div class="form-group">
-            </input>
-
-            <div dish-menu="display: flex;">
-                <label for="name">料理名:</label>
-                <h1 name="name" style="text-align:center;">{{ $detail_memo['name'] }}</h1>
+<div class="container mx-auto px-4 py-4">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="py-4 px-8 bg-gray-100 border-b border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800">マイレシピ詳細</h2>
             </div>
+        <form class="px-8 py-4" action="{{ route ('update') }}" method="POST">
+            @csrf
+            <input type="hidden" name="memo_id" value="{{ $detail_memo['id'] }}" /></input>
 
-
-
-
-
+            <div class="flex items-center">
+                <label for="name" class="block text-gray-700 font-bold mr-4">マイレシピ</label>
+                <h1 name="name" class="text-center whitespace-no-wrap overflow-ellipsis overflow-hidden">{{ $detail_memo['name'] }}</h1>
+            </div>
 
               <label for="rating">難易度:</label>
               <select name="rating" id="rating">
@@ -57,10 +51,6 @@
                         </div>
 
 
-
-
-
-
                         <div class="form-group">
                             <label class="col-md-5" for="title">メモ</label>
                             <div class="card-body" style="padding: 0.5em;">
@@ -69,8 +59,8 @@
                             </div>
 
                         </div>
-            <div class ="detail-button">
-                <button type="submit" class="btn btn-primary">更新</button>
+            <!-- <div class ="detail-button"> -->
+                <button class="bg-red-200 hover:bg-red-100 text-white rounded px-4 py-2">Red 200</button>
                 <a class="btn btn-primary" href="/home">戻る</a>
 </form>
             <!-- 削除ボタンの処理 -->
@@ -81,7 +71,7 @@
 
                 <button type="submit" class="btn btn-danger  btn-delete">削除</button>
             </form>
-            </div>
+            <!-- </div> -->
 
 
     </div>

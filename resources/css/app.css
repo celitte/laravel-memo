@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 追加箇所 */
+.myclass {
+	@apply bg-teal-700;
+}
