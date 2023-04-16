@@ -41,20 +41,32 @@ class HomeController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
-            'content' =>'required',
-            'time' =>'required',
+            'content' => 'required',
+            'time' => 'required',
         ]);
-
+    
         $posts = $request->all();
-
-        Memo::insert(['name' => $posts['name'],
-                    'rating' => $posts['rating'],
-                    'content' => $posts['content'],
-                    'time' => $posts['time'],
-                    'memo' => $posts['memo'],
-                    'user_id' => \Auth::id()]);
-
-                    return redirect ( route('home'));
+        $image = $request->file('image');
+    
+        $path = null; // デフォルトはnull
+    
+        // 画像がアップロードされている場合は、storageに保存
+        if ($request->hasFile('image') && $image->isValid()) {
+            $path = \Storage::put('/public', $image);
+            $path = explode('/', $path)[1];
+        }
+    
+        Memo::insert([
+            'name' => $posts['name'],
+            'rating' => $posts['rating'],
+            'content' => $posts['content'],
+            'time' => $posts['time'],
+            'memo' => $posts['memo'],
+            'image' => $path,
+            'user_id' => \Auth::id(),
+        ]);
+    
+        return redirect(route('home'));
     }
 
 

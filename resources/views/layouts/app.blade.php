@@ -80,16 +80,16 @@
             <div class="row">
                 <div class="col-md-4 offset-md-2">
                     
-                <div class="container mx-auto px-4 py-4">
+                <div class="container mx-auto px-4 py-3">
   <div class="bg-white rounded-lg shadow-md overflow-hidden">
     <div class="py-4 px-8 bg-gray-100 border-b border-gray-200">
-      <h2 class="text-2xl font-bold text-gray-800">マイレシピ一覧</h2>
+      <h2 class="text-2xl font-bold text-gray-800">レシピ一覧</h2>
     </div>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       @foreach($memos as $memo)
         <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-          <img src="{{ $memo['image_url'] }}" alt="{{ $memo['name'] }}" class="object-cover w-full h-28 rounded-t-lg">
+          <img src="{{ '/storage/' . $memo['image'] }}" alt="{{ $memo['name'] }}" class="object-cover w-full h-28 rounded-t-lg">
           <div class="py-2 px-2">
             <h3 class="text-lg font-bold mb-2">{{ $memo['name'] }}</h3>
             <p class="text-gray-700">{{ $memo['created_at'] }}</p>

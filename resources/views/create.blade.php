@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mx-auto px-4 py-4">
+    <div class="container mx-auto px-4 py-3">
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <div class="py-4 px-8 bg-gray-100 border-b border-gray-200">
-                <h2 class="text-2xl font-bold text-gray-800">マイレシピ作成</h2>
+                <h2 class="text-2xl font-bold text-gray-800">レシピ登録</h2>
             </div>
-            <form class="px-4 py-4" action="{{ route ('store') }}" method="POST">
+            <form class="px-4 py-4" action="{{ route ('store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if ($errors->any())
                     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mb-4 rounded relative" role="alert">
@@ -47,21 +47,6 @@
 </div>
 
 
-
-                            <!-- <label for="time-input" style="display:">調理時間</label>
-                        <select class="form-control" id="time-input" name="time" required style="display: inline-block; margin: 5px; width: 170px; ">
-                            <option value="">--選択してください--</option>
-                            <option value="5">5分</option>  
-                            <option value="10">10分</option>
-                            <option value="15">15分</option>
-                            <option value="30">30分</option>
-                            <option value="45">45分</option>    
-                            <option value="60">1時間</option>
-                        </select>
-                        <div class="invalid-feedback">
-                                有効な時間単位を選択してください。
-                        </div> -->
-
                 <div class="container mx-auto my-4">
   <form action="#" method="POST" class="grid grid-cols-1 gap-8 sm:grid-cols-2">
     <div>
@@ -71,6 +56,12 @@
     <div>
       <label for="exampleFormControlTextarea1" class="block text-gray-700 font-bold mb-2">メモ</label>
       <textarea name="memo" rows="5" placeholder="メモを残しましょう" class="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"></textarea>
+
+    <div class="form-group">
+        <label for="image" class="block text-gray-700 font-bold mb-2">画像登録</label>
+        <input type="file" class="form-controll-file" name='image' id="image">
+    </div>
+
       <button type="submit" onclick="showPopup()" class="mt-4 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
   保存！
 </button>
