@@ -62,16 +62,15 @@
                                 有効な時間単位を選択してください。
                         </div> -->
 
-                <br>
                 <div class="container mx-auto my-4">
   <form action="#" method="POST" class="grid grid-cols-1 gap-8 sm:grid-cols-2">
     <div>
       <label for="exampleFormControlTextarea1" class="block text-gray-700 font-bold mb-2">材料</label>
-      <textarea name="content" rows="4" placeholder="材料を書きましょう" class="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"></textarea>
+      <textarea name="content" rows="5" placeholder="材料を書きましょう" class="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"></textarea>
     </div>
     <div>
       <label for="exampleFormControlTextarea1" class="block text-gray-700 font-bold mb-2">メモ</label>
-      <textarea name="memo" rows="4" placeholder="メモを残しましょう" class="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"></textarea>
+      <textarea name="memo" rows="5" placeholder="メモを残しましょう" class="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"></textarea>
       <button type="submit" onclick="showPopup()" class="mt-4 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
   保存！
 </button>

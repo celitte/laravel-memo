@@ -89,7 +89,7 @@
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       @foreach($memos as $memo)
         <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-          <img src="{{ $memo['image_url'] }}" alt="{{ $memo['name'] }}" class="object-cover w-full h-48 rounded-t-lg">
+          <img src="{{ $memo['image_url'] }}" alt="{{ $memo['name'] }}" class="object-cover w-full h-28 rounded-t-lg">
           <div class="py-2 px-2">
             <h3 class="text-lg font-bold mb-2">{{ $memo['name'] }}</h3>
             <p class="text-gray-700">{{ $memo['created_at'] }}</p>
@@ -98,10 +98,7 @@
       @endforeach
     </div>
   </div>
-</div>
-
-
-                    
+</div>           
                 </div>
 
 
