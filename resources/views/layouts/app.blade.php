@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,9 +21,10 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
+
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-white shadow-sm" style="background-color:#e3f2fd";>
+        <nav class="navbar navbar-expand-md navbar-white shadow-sm" style="background-color:#e3f2fd" ;>
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -41,35 +43,34 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                         @endguest
                     </ul>
                 </div>
@@ -79,35 +80,41 @@
         <main class="py-4">
             <div class="row">
                 <div class="col-md-4 offset-md-2">
-                    
-                <div class="container mx-auto px-4 py-3">
-  <div class="bg-white rounded-lg shadow-md overflow-hidden">
-    <div class="py-4 px-8 bg-gray-100 border-b border-gray-200">
-      <h2 class="text-2xl font-bold text-gray-800">レシピ一覧</h2>
-    </div>
 
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      @foreach($memos as $memo)
-        <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-          <img src="{{ '/storage/' . $memo['image'] }}" alt="{{ $memo['name'] }}" class="object-cover w-full h-28 rounded-t-lg">
-          <div class="py-2 px-2">
-            <h3 class="text-lg font-bold mb-2">{{ $memo['name'] }}</h3>
-            <p class="text-gray-700">{{ $memo['created_at'] }}</p>
-          </div>
-        </a>
-      @endforeach
-    </div>
-  </div>
-</div>           
+                    <div class="container mx-auto px-4 py-3">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="py-4 px-8 bg-gray-100 border-b border-gray-200">
+                                <h2 class="text-2xl font-bold text-gray-800">レシピ一覧</h2>
+                            </div>
+
+                            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                                @foreach($memos as $memo)
+                                <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                    @if($memo['image'])
+                                    <img src="{{ '/storage/' . $memo['image'] }}" alt="{{ '料理の画像'}}" class="object-cover h-28 rounded-t-lg">
+                                    @else
+                                    <img src="{{ '../images/ciid.png' }}" alt="{{ 'ダミー画像'}}" class="object-cover h-28 rounded-t-lg">
+                                    @endif
+
+                                    <div class="py-2 px-2">
+                                        <h3 class="text-lg font-bold mb-2">{{ $memo['name'] }}</h3>
+                                        <p class="text-gray-700">{{ $memo['created_at'] }}</p>
+                                    </div>
+                                </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
-                        <div class="col-md-4">
-                            @yield('content')
-                        </div>
+                <div class="col-md-4">
+                    @yield('content')
+                </div>
             </div>
 
         </main>
     </div>
 </body>
+
 </html>

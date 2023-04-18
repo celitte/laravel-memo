@@ -27,14 +27,14 @@ class HomeController extends Controller
     {
 
         $memos = Memo::select('memos.*')
-        ->where('user_id', '=', \Auth::id())
-        ->whereNull('deleted_at')
-        ->orderBy('updated_at','desc')
-        ->get();
-    
+            ->where('user_id', '=', \Auth::id())
+            ->whereNull('deleted_at')
+            ->orderBy('updated_at', 'desc')
+            ->get();
 
 
-        return view('create',compact('memos'));
+
+        return view('create', compact('memos'));
     }
 
     public function store(Request $request)
@@ -44,18 +44,18 @@ class HomeController extends Controller
             'content' => 'required',
             'time' => 'required',
         ]);
-    
+
         $posts = $request->all();
         $image = $request->file('image');
-    
+
         $path = null; // デフォルトはnull
-    
+
         // 画像がアップロードされている場合は、storageに保存
         if ($request->hasFile('image') && $image->isValid()) {
             $path = \Storage::put('/public', $image);
             $path = explode('/', $path)[1];
         }
-    
+
         Memo::insert([
             'name' => $posts['name'],
             'rating' => $posts['rating'],
@@ -65,7 +65,7 @@ class HomeController extends Controller
             'image' => $path,
             'user_id' => \Auth::id(),
         ]);
-    
+
         return redirect(route('home'));
     }
 
@@ -74,16 +74,16 @@ class HomeController extends Controller
     {
 
         $memos = Memo::select('memos.*')
-        ->where('user_id', '=', \Auth::id())
-        ->whereNull('deleted_at')
-        ->orderBy('updated_at','desc')
-        ->get();
-    
+            ->where('user_id', '=', \Auth::id())
+            ->whereNull('deleted_at')
+            ->orderBy('updated_at', 'desc')
+            ->get();
+
         $detail_memo = Memo::find($id);
 
-        return view('detail',compact('memos', 'detail_memo'));
+        return view('detail', compact('memos', 'detail_memo'));
     }
-    
+
 
 
     public function update(Request $request)
@@ -91,37 +91,28 @@ class HomeController extends Controller
         $posts = $request->all();
 
         Memo::where('id', $posts['memo_id'])
-        ->update([
-            // 'name' => $posts['name'],
-        'rating' => $posts['rating'],
-        'content' => $posts['content'],
-        'time' => $posts['time'],
-        'memo' => $posts['memo'],
-        'user_id' => \Auth::id()]);
-            
+            ->update([
+                // 'name' => $posts['name'],
+                'rating' => $posts['rating'],
+                'content' => $posts['content'],
+                'time' => $posts['time'],
+                'memo' => $posts['memo'],
+                'user_id' => \Auth::id()
+            ]);
 
-        return redirect ( route('home'));
-        
+
+        return redirect(route('home'));
     }
 
 
-    /**
-     * 削除
-     */
-    //  public function delete($id)
-    //  {
-    //      $memos = \App
-    //  }
+    public function destroy(Request $request)
+    {
+        $posts = $request->all();
+        Memo::where('id', $posts['memo_id'])
+            ->update(['deleted_at' => date("Y-m-d H:i:s", time())]);
 
-     public function destroy(Request $request)
-     {
-         $posts = $request->all();
-         Memo::where('id', $posts['memo_id'])
-         ->update(['deleted_at' => date("Y-m-d H:i:s", time())]);
 
-             
- 
-         return redirect ( route('home'));
-         
-     }
+
+        return redirect(route('home'));
+    }
 }
