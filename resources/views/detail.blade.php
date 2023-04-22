@@ -10,6 +10,12 @@
             @csrf
             <input type="hidden" name="memo_id" value="{{ $detail_memo['id'] }}" /></input>
 
+            @if($detail_memo['image'])
+            <img src="{{ '/storage/' . $detail_memo['image'] }}" alt="{{ $detail_memo['name'] }}" class="object-cover w-400 rounded-t-lg">
+            @else
+            <img src="{{ '../images/ciid.png' }}" alt="{{ 'ダミー画像'}}" class="object-cover w-48 h-48 rounded-t-lg">
+            @endif
+
             <div class="flex items-center">
                 <label for="name" class="block text-gray-700 font-bold mr-4">マイレシピ</label>
                 <h1 name="name" class="text-center whitespace-no-wrap overflow-ellipsis overflow-hidden">{{ $detail_memo['name'] }}</h1>
@@ -67,7 +73,7 @@
                         <label for="exampleFormControlTextarea1" class="block text-gray-700 font-bold mb-2">メモ</label>
                         <textarea name="memo" rows="5" placeholder="メモを残しましょう" class="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">{{$detail_memo['memo']}}</textarea>
 
-                        <img src="{{ '/storage/' . $detail_memo['image'] }}" alt="{{ $detail_memo['name'] }}" class="object-cover  h-28 rounded-t-lg">
+
 
                         <!-- <div class="form-group">
                    <label class="col-md-5" for="title">食材</label>

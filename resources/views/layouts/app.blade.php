@@ -83,17 +83,17 @@
 
                     <div class="container mx-auto px-4 py-3">
                         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="py-4 px-8 bg-gray-100 border-b border-gray-200">
-                                <h2 class="text-2xl font-bold text-gray-800">レシピ一覧</h2>
+                            <div class="py-3 px-8 bg-gray-100 border-b border-gray-200">
+                                <h2 class="text-2xl text-gray-800">レシピ一覧</h2>
                             </div>
 
-                            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                            <div class="grid grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-3">
                                 @foreach($memos as $memo)
                                 <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                                     @if($memo['image'])
-                                    <img src="{{ '/storage/' . $memo['image'] }}" alt="{{ '料理の画像'}}" class="object-cover h-28 rounded-t-lg">
+                                    <img src="{{ '/storage/' . $memo['image'] }}" alt="{{ '料理の画像'}}" class="object-cover w-full h-48 rounded-t-lg">
                                     @else
-                                    <img src="{{ '../images/ciid.png' }}" alt="{{ 'ダミー画像'}}" class="object-cover h-28 rounded-t-lg">
+                                    <img src="{{ '../images/ciid.png' }}" alt="{{ 'ダミー画像'}}" class="object-cover w-full h-48 rounded-t-lg">
                                     @endif
 
                                     <div class="py-2 px-2">
@@ -104,7 +104,10 @@
 
                                 @endforeach
                             </div>
-                            {{ $memos->links() }}
+                            <div class="py-3">
+                                {{ $memos->links() }}
+                            </div>
+
 
                         </div>
                     </div>
