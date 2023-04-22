@@ -30,7 +30,7 @@ class HomeController extends Controller
             ->where('user_id', '=', \Auth::id())
             ->whereNull('deleted_at')
             ->orderBy('updated_at', 'desc')
-            ->get();
+            ->paginate(9);
 
 
 

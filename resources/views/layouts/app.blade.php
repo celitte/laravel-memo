@@ -101,8 +101,11 @@
                                         <p class="text-gray-700">{{ $memo['created_at'] }}</p>
                                     </div>
                                 </a>
+
                                 @endforeach
                             </div>
+                            {{ $memos->links() }}
+
                         </div>
                     </div>
                 </div>
