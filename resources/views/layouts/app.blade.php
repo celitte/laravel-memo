@@ -11,8 +11,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200&family=Roboto:ital,wght@0,100;1,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/style.css">
     <!-- <link href="{{asset('css/style.css')}}" rel="stylesheet"> -->
@@ -83,25 +84,27 @@
 
                     <div class="container mx-auto px-4 py-3">
                         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="py-3 px-8 bg-gray-100 border-b border-gray-200">
-                                <h2 class="text-2xl text-gray-800">レシピ一覧</h2>
+                            <div class="py-2.5 px-8 bg-yellow-300 border-b border-gray-200">
+                                <h2 class="font-sans text-2xl text-gray-800">レシピ一覧</h2>
                             </div>
 
                             <div class="grid grid-cols-1 gap-4 px-4 py-4 md:grid-cols-2 lg:grid-cols-3">
                                 @foreach($memos as $memo)
-                                <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                                    @if($memo['image'])
-                                    <img src="{{ '/storage/' . $memo['image'] }}" alt="{{ '料理の画像'}}" class="object-cover w-full h-48 rounded-t-lg">
-                                    @else
-                                    <img src="{{ '../images/ciid.png' }}" alt="{{ 'ダミー画像'}}" class="object-cover w-full h-48 rounded-t-lg">
-                                    @endif
+                                <div class=recipe-card>
+                                    <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                        @if($memo['image'])
+                                        <img src="{{ '/storage/' . $memo['image'] }}" alt="{{ '料理の画像'}}" class="object-cover w-full h-48 rounded-t-lg">
+                                        @else
+                                        <img src="{{ '../images/ciid.png' }}" alt="{{ 'ダミー画像'}}" class="object-cover w-full h-48 rounded-t-lg">
+                                        @endif
 
-                                    <div class="py-2 px-2">
-                                        <h3 class="text-lg font-bold mb-2">{{ $memo['name'] }}</h3>
-                                        <p class="text-gray-700">{{ \Carbon\Carbon::parse($memo['created_at'])->format('Y/m/d') }}</p>
+                                        <div class="py-2 px-2">
+                                            <h3 class="text-lg font-bold mb-2">{{ $memo['name'] }}</h3>
+                                            <p class="text-gray-700">{{ \Carbon\Carbon::parse($memo['created_at'])->format('Y/m/d') }}</p>
 
-                                    </div>
-                                </a>
+                                        </div>
+                                    </a>
+                                </div>
 
                                 @endforeach
                             </div>

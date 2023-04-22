@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto px-4 py-3">
     <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="py-3 px-8 bg-gray-100 border-b border-gray-200">
+        <div class="py-2.5 px-8 bg-yellow-300 border-b border-gray-200">
             <h2 class="text-2xl text-gray-800">レシピ登録</h2>
         </div>
         <form class="px-4 py-4" action="{{ route ('store') }}" method="POST" enctype="multipart/form-data">

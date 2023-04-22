@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200&family=Roboto:ital,wght@0,100;1,900&display=swap');
+
+
 /* 追加箇所 */
 .myclass {
 	@apply bg-teal-700;
