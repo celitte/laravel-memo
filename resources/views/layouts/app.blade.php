@@ -24,7 +24,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-white shadow-sm" style="background-color:#e3f2fd" ;>
+        <nav class="navbar navbar-expand-md navbar-white shadow-sm" style="background-color:#ffe000" ;>
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -87,7 +87,7 @@
                                 <h2 class="text-2xl text-gray-800">レシピ一覧</h2>
                             </div>
 
-                            <div class="grid grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-3">
+                            <div class="grid grid-cols-1 gap-4 px-4 py-4 md:grid-cols-2 lg:grid-cols-3">
                                 @foreach($memos as $memo)
                                 <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                                     @if($memo['image'])
@@ -98,13 +98,14 @@
 
                                     <div class="py-2 px-2">
                                         <h3 class="text-lg font-bold mb-2">{{ $memo['name'] }}</h3>
-                                        <p class="text-gray-700">{{ $memo['created_at'] }}</p>
+                                        <p class="text-gray-700">{{ \Carbon\Carbon::parse($memo['created_at'])->format('Y/m/d') }}</p>
+
                                     </div>
                                 </a>
 
                                 @endforeach
                             </div>
-                            <div class="py-3">
+                            <div class="py-2">
                                 {{ $memos->links() }}
                             </div>
 
