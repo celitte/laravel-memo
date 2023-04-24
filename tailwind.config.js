@@ -7,10 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        'custom-yellow': '#ffe000',
+        'dark-orange': '#ff8c00',
+      },
       fontFamily: {
       sans: ['Noto Sans JP', 'sans-serif']
-      }
-    }
+      },
+    },
   },
   plugins: [],
 }

@@ -10,13 +10,19 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200&family=Roboto:ital,wght@0,100;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200&family=Roboto:ital,wght@0,100;1,900&display=swap" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="/css/style.css">
     <!-- <link href="{{asset('css/style.css')}}" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="/css/app.css"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;500;700&family=Roboto:ital,wght@0,100;1,900&display=swap" rel="stylesheet">
 
 
     <!-- Scripts -->
@@ -27,7 +33,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-white shadow-sm" style="background-color:#ffe000" ;>
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand font-sans" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -82,10 +88,11 @@
             <div class="row">
                 <div class="col-md-4 offset-md-2">
 
-                    <div class="container mx-auto px-4 py-3">
+                    <div class="container mx-auto px-2 py-1">
                         <div class="bg-white rounded-lg shadow-md overflow-hidden">
                             <div class="py-2.5 px-8 bg-yellow-300 border-b border-gray-200">
                                 <h2 class="font-sans text-2xl text-gray-800">レシピ一覧</h2>
+
                             </div>
 
                             <div class="grid grid-cols-1 gap-4 px-4 py-4 md:grid-cols-2 lg:grid-cols-3">
@@ -99,8 +106,8 @@
                                         @endif
 
                                         <div class="py-2 px-2">
-                                            <h3 class="text-lg font-bold mb-2">{{ $memo['name'] }}</h3>
-                                            <p class="text-gray-700">{{ \Carbon\Carbon::parse($memo['created_at'])->format('Y/m/d') }}</p>
+                                            <h3 class="font-sans text-lg font-bold mb-2" style="color: #000000;">{{ $memo['name'] }}</h3>
+                                            <p class="font-sans text-gray-700">{{ \Carbon\Carbon::parse($memo['created_at'])->format('Y/m/d') }}</p>
 
                                         </div>
                                     </a>
@@ -108,8 +115,9 @@
 
                                 @endforeach
                             </div>
-                            <div class="py-2">
+                            <div class="pagination-wrapper relative">
                                 {{ $memos->links() }}
+                                <p class="pagination-message">{{ $memos->firstItem() }}〜{{ $memos->lastItem() }} / {{ $memos->total() }}件</p>
                             </div>
 
 

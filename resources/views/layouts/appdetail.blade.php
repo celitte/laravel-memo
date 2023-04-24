@@ -16,6 +16,10 @@
 
     <link rel="stylesheet" href="/css/style.css">
     <!-- <link href="{{asset('css/style.css')}}" rel="stylesheet"> -->
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;500;700&family=Roboto:ital,wght@0,100;1,900&display=swap" rel="stylesheet">
 
 
     <!-- Scripts -->
@@ -147,8 +151,9 @@
 
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="padding-left: 0; padding-right: 0;">
                         @yield('content')
+
                     </div>
                 </div>
             </div>
