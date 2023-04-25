@@ -62,9 +62,10 @@
                             <input type="file" class="font-sans form-controll-file" name='image' id="image">
                         </div>
 
-                        <button type="submit" onclick="showPopup()" class="font-sans mt-4 w-full block justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm text-left">
+                        <button type="submit" onclick="showPopup()" class="bg-custom-yellow font-sans text-black font-bold py-2 px-4 rounded shadow-md hover:bg-dark-orange hover:text-white transition-colors duration-300 ease-in-out mr-3" style="margin-top: 20px;">
                             保存！
                         </button>
+
 
 
 
