@@ -115,8 +115,11 @@
 
                                 @endforeach
                             </div>
+                            <!-- Laravel Paginator -->
                             <div class="pagination-wrapper relative">
-                                {{ $memos->links() }}
+                                {{ $memos->render('pagination::simple-bootstrap-4') }}
+
+
                                 <p class="pagination-message">{{ $memos->firstItem() }}〜{{ $memos->lastItem() }} / {{ $memos->total() }}件</p>
                             </div>
 
