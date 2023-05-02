@@ -13,11 +13,16 @@ return new class extends Migration
     {
         Schema::create('memos', function (Blueprint $table) {
             $table->unsignedBigInteger('id', true);
+            $table->text('name');
+            $table->integer('rating');
             $table->longText('content');
+            $table->integer('time');
+            $table->text('memo')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->softDeletes();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
