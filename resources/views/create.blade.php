@@ -71,7 +71,7 @@
 
                         <div id="popup" class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center hidden">
                             <div class="bg-white rounded-lg shadow-lg p-4">
-                                <p class="font-sans text-lg font-medium text-blue-800 font-bold text-center">登録中です</p>
+                                <p class="font-sans text-lg font-medium text-blue-800 font-bold text-center">登録中</p>
 
                             </div>
                         </div>
