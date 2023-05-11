@@ -40,14 +40,17 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|max:255',
-            'content' => 'required',
-            'time' => 'required|date_format:Y-m-d H:i:s',
+            'name' => 'required|max:30',
+            'content' => 'required|max:500',
+            'time' => 'required',
+            'memo' => 'max:500',
         ], [
             'name.required' => 'マイレシピは必須項目です。',
-            'name.max' => 'マイレシピは255文字以内で入力してください。',
+            'name.max' => 'マイレシピは30文字以内で入力してください。',
+            'content.max' => '材料は500文字以内で入力してください。',
             'content.required' => '材料は必須項目です。',
             'time.required' => '調理時間は必須項目です。',
+            'memo.max' => 'メモは500文字以内で入力してください。',
         ]);
 
 
