@@ -102,7 +102,7 @@
                                         @if($memo['image'])
                                         <img src="{{ Storage::disk('s3')->url($memo['image']) }}" alt="{{ '料理の画像' }}" class="object-cover w-full h-48 rounded-t-lg">
                                         @else
-                                        <img src="{{ asset('images/ciid.png') }}" alt="{{ 'ダミー画像' }}" class="object-cover w-full h-48 rounded-t-lg">
+                                        <img src="{{ Storage::disk('s3')->url('images/ciid.png') }}" alt="{{ 'ダミー画像' }}" class="object-cover w-full h-48 rounded-t-lg">
                                         @endif
                                     </a>
 
