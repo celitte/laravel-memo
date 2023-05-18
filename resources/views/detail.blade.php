@@ -11,10 +11,11 @@
             <input type="hidden" name="memo_id" value="{{ $detail_memo['id'] }}" /></input>
 
             @if($detail_memo['image'])
-            <img src="{{ '/storage/' . $detail_memo['image'] }}" alt="{{ $detail_memo['name'] }}" class="object-cover w-400 rounded-t-lg">
+            <img src="{{ Storage::disk('s3')->url($detail_memo['image']) }}" alt="{{ $detail_memo['name'] }}" class="object-cover w-400 rounded-t-lg">
             @else
-            <img src="{{ '../images/ciid.png' }}" alt="{{ 'ダミー画像'}}" class="object-cover w-48 h-48 rounded-t-lg">
+            <img src="{{ asset('images/ciid.png') }}" alt="{{ 'ダミー画像' }}" class="object-cover w-48 h-48 rounded-t-lg">
             @endif
+
 
             <div class="flex items-center">
                 <label for="name" class="font-sans block text-gray-700 font-bold mr-4">マイレシピ</label>

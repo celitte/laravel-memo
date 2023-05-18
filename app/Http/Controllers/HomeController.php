@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\ModelName;
+
+use App\Models\ModelName;
 use Illuminate\Http\Request;
 use App\Models\Memo;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -61,9 +63,23 @@ class HomeController extends Controller
 
         // 画像がアップロードされている場合は、storageに保存
         if ($request->hasFile('image') && $image->isValid()) {
-            $path = \Storage::put('/public', $image);
-            $path = explode('/', $path)[1];
+            $extension = $image->getClientOriginalExtension();
+            $fileName = Str::random(40) . '.' . $extension;
+            $path = $image->storeAs('images', $fileName, 's3');
         }
+
+        $memo = new Memo();
+        $memo->name = $posts['name'];
+        $memo->rating = $posts['rating'];
+        $memo->content = $posts['content'];
+        $memo->time = $posts['time'];
+        $memo->memo = $posts['memo'];
+        $memo->image = $path;
+        $memo->user_id = \Auth::id();
+        $memo->save();
+
+        return redirect(route('home'));
+
 
         Memo::insert([
             'name' => $posts['name'],

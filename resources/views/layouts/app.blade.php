@@ -100,16 +100,18 @@
                                 <div class=recipe-card>
                                     <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                                         @if($memo['image'])
-                                        <img src="{{ '/storage/' . $memo['image'] }}" alt="{{ '料理の画像'}}" class="object-cover w-full h-48 rounded-t-lg">
+                                        <img src="{{ Storage::disk('s3')->url($memo['image']) }}" alt="{{ '料理の画像' }}" class="object-cover w-full h-48 rounded-t-lg">
                                         @else
-                                        <img src="{{ '../images/ciid.png' }}" alt="{{ 'ダミー画像'}}" class="object-cover w-full h-48 rounded-t-lg">
+                                        <img src="{{ asset('images/ciid.png') }}" alt="{{ 'ダミー画像' }}" class="object-cover w-full h-48 rounded-t-lg">
                                         @endif
+                                    </a>
 
-                                        <div class="py-2 px-2">
-                                            <h3 class="font-sans text-lg font-bold mb-2" style="color: #000000;">{{ $memo['name'] }}</h3>
-                                            <p class="font-sans text-gray-700">{{ \Carbon\Carbon::parse($memo['created_at'])->format('Y/m/d') }}</p>
 
-                                        </div>
+                                    <div class="py-2 px-2">
+                                        <h3 class="font-sans text-lg font-bold mb-2" style="color: #000000;">{{ $memo['name'] }}</h3>
+                                        <p class="font-sans text-gray-700">{{ \Carbon\Carbon::parse($memo['created_at'])->format('Y/m/d') }}</p>
+
+                                    </div>
                                     </a>
                                 </div>
 
