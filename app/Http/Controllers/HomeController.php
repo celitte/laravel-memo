@@ -65,20 +65,17 @@ class HomeController extends Controller
         if ($request->hasFile('image') && $image->isValid()) {
             $extension = $image->getClientOriginalExtension();
             $fileName = Str::random(40) . '.' . $extension;
-            $path = $image->storeAs('images', $fileName, 's3');
+
+            $s3 = \Storage::disk('s3');
+            $filePath = 'images/' . $fileName;
+
+            // S3に画像をアップロード
+            $s3->put($filePath, file_get_contents($image), 'public');
+
+            $path = $filePath;
         }
 
-        $memo = new Memo();
-        $memo->name = $posts['name'];
-        $memo->rating = $posts['rating'];
-        $memo->content = $posts['content'];
-        $memo->time = $posts['time'];
-        $memo->memo = $posts['memo'];
-        $memo->image = $path;
-        $memo->user_id = \Auth::id();
-        $memo->save();
 
-        return redirect(route('home'));
 
 
         Memo::insert([
