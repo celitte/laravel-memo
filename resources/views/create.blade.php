@@ -18,7 +18,7 @@
             </div>
             @endif
             <div class="mb-4 flex items-center">
-                <label for="name" class="font-sans block text-gray-700 font-bold mr-4">マイレシピ</label>
+                <label for="name" class="font-sans block text-gray-700 font-bold mr-4">マイレシピ<span class="text-red-500">*</span></label>
                 <input type="text" name="name" id="name" placeholder="料理名" class="px-3 py-2 border border-gray-400 rounded-lg flex-grow">
             </div>
             <div class="mb-4 flex items-center">
@@ -32,7 +32,7 @@
                 </select>
             </div>
             <div class="mb-4 flex items-center">
-                <label for="time-input" class="font-sans block text-gray-900 font-bold mb-2 mr-2">調理時間</label>
+                <label for="time-input" class="font-sans block text-gray-900 font-bold mb-2 mr-2">調理時間<span class="text-red-500">*</span></label>
                 <div class="relative inline-block max-w-md">
                     <select class="font-sans block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-10 rounded ml-5" id="time-input" name="time">
                         <option value="">--選択してください--</option>
@@ -50,7 +50,7 @@
             <div class="container mx-auto my-4 p-0">
                 <form action="#" method="POST" class="grid grid-cols-1 gap-8 sm:grid-cols-2">
                     <div>
-                        <label for="exampleFormControlTextarea1" class="font-sans block text-gray-700 font-bold mb-2">材料</label>
+                        <label for="exampleFormControlTextarea1" class="font-sans block text-gray-700 font-bold mb-2">材料<span class="text-red-500">*</span></label>
                         <textarea name="content" rows="5" placeholder="材料を書きましょう" class="font-sans w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"></textarea>
                     </div>
                     <div>

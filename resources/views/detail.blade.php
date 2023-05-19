@@ -11,9 +11,9 @@
             <input type="hidden" name="memo_id" value="{{ $detail_memo['id'] }}" /></input>
 
             @if($detail_memo['image'])
-            <img src="{{ Storage::disk('s3')->url($detail_memo['image']) }}" alt="{{ $detail_memo['name'] }}" class="object-cover w-400 rounded-t-lg">
+            <img src="https://recipe-notebook.s3.ap-northeast-1.amazonaws.com/public/{{ $memo['image'] }}" alt="{{ $detail_memo['name'] }}" class="object-cover w-400 rounded-t-lg">
             @else
-            <img src="{{ asset('images/ciid.png') }}" alt="{{ 'ダミー画像' }}" class="object-cover w-48 h-48 rounded-t-lg">
+            <img src="https://recipe-notebook.s3.ap-northeast-1.amazonaws.com/images/Ciid.png" alt="{{ 'ダミー画像' }}" class="object-cover w-48 h-48 rounded-t-lg">
             @endif
 
 
