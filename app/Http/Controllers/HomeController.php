@@ -63,7 +63,7 @@ class HomeController extends Controller
 
         // 画像がアップロードされている場合は、s3に保存
         if ($request->hasFile('image') && $image->isValid()) {
-            $path = Storage::disk('s3')->put('public', $image);
+            $path = Storage::disk('s3')->put('', $image);
             $path = explode('/', $path)[1];
         }
 
