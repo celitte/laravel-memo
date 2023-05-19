@@ -104,7 +104,7 @@
 
                                         <img src="https://recipe-notebook.s3.ap-northeast-1.amazonaws.com/public/{{ $memo['image'] }}" alt="料理の画像" class="object-cover w-full h-48 rounded-t-lg">
                                         @else
-                                        <img src="{{ Storage::disk('s3')->url('images/ciid.png') }}" alt="ダミー画像" class="object-cover w-full h-48 rounded-t-lg">
+                                        <img src="https://recipe-notebook.s3.ap-northeast-1.amazonaws.com/images/Ciid.png" alt="ダミー画像" class="object-cover w-full h-48 rounded-t-lg">
                                         @endif
                                     </a>
 
