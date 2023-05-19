@@ -60,13 +60,11 @@ class HomeController extends Controller
 
         $path = null; // デフォルトはnull
 
-
-        // 画像がアップロードされている場合は、s3に保存
+        // 画像がアップロードされている場合は、storageに保存
         if ($request->hasFile('image') && $image->isValid()) {
-            $path = Storage::disk('s3')->put('', $image);
+            $path = Storage::disk('s3')->put('public', $image);
             $path = explode('/', $path)[1];
         }
-
 
         Memo::insert([
             'name' => $posts['name'],
@@ -74,7 +72,7 @@ class HomeController extends Controller
             'content' => $posts['content'],
             'time' => $posts['time'],
             'memo' => $posts['memo'],
-            'image' => Storage::disk('s3')->url($path),
+            'image' => $path,
             'user_id' => \Auth::id(),
         ]);
 
