@@ -100,7 +100,9 @@
                                 <div class=recipe-card>
                                     <a href="/detail/{{ $memo['id'] }}" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                                         @if($memo['image'])
-                                        <img src="{{ Storage::disk('s3')->url($memo['image']) }}" alt="{{ '料理の画像' }}" class="object-cover w-full h-48 rounded-t-lg">
+                                        <!-- <img src="{{ Storage::disk('s3')->url($memo['image']) }}" alt="{{ '料理の画像' }}" class="object-cover w-full h-48 rounded-t-lg"> -->
+                                        <img src="{{ Storage::url($memo['image']) }}" alt="料理の画像" class="object-cover w-full h-48 rounded-t-lg">
+
                                         @else
                                         <img src="{{ Storage::disk('s3')->url('images/ciid.png') }}" alt="{{ 'ダミー画像' }}" class="object-cover w-full h-48 rounded-t-lg">
                                         @endif
